@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Events\ChatMessageReceived;
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
+
+Route::get('broadcast', function () {
+    event(new ChatMessageReceived('Hello there!'));
+});
