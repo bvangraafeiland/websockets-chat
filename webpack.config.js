@@ -1,3 +1,4 @@
+require('dotenv').config();
 let path = require('path');
 let webpack = require('webpack');
 let Mix = require('laravel-mix').config;
@@ -251,6 +252,8 @@ module.exports.plugins = (module.exports.plugins || []).concat([
         }
     })
 ]);
+
+module.exports.plugins.push(new webpack.EnvironmentPlugin('PUSHER_KEY'));
 
 
 

@@ -23,6 +23,6 @@ import Echo from "laravel-echo";
 
 window.Echo = new Echo({
     broadcaster: 'pusher',
-    key: '3537fc7fbdb43dc763c7',
+    key: process.env.PUSHER_KEY,
     cluster: 'eu'
 });

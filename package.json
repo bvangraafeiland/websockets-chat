@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.15.3",
     "bootstrap-sass": "^3.3.7",
+    "dotenv": "^4.0.0",
     "laravel-echo": "^1.1.4",
     "pusher-js": "^4.0.0",
     "vue": "^2.0.1"
