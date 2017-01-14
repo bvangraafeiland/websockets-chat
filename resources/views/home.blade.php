@@ -8,6 +8,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
+                    <example></example>
                     <p>You are logged in!</p>
                     <p v-for="message in messages">@{{ message }}</p>
                 </div>

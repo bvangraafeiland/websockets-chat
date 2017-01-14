@@ -21,6 +21,9 @@
         "classmap": [
             "database"
         ],
+        "files" : [
+            "app/mix.php"
+        ],
         "psr-4": {
             "App\\": "app/"
         }
