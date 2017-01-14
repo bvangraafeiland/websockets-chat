@@ -7,3 +7,6 @@ Homestead.json
 Homestead.yaml
 .env
 public/hot
+public/manifest.json
+public/js
+public/css
