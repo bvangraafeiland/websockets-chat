@@ -19,15 +19,16 @@ class ChatMessageReceived implements ShouldBroadcast
      */
     public $message;
     public $receivedAt;
+    public $senderName;
 
     /**
      * Create a new event instance.
      *
-     * @return void
      */
-    public function __construct($message)
+    public function __construct($senderName, $message)
     {
         $this->message = $message;
+        $this->senderName = $senderName;
         $this->receivedAt = Carbon::now()->toW3cString();
     }
 

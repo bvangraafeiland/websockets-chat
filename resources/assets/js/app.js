@@ -14,35 +14,11 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+import Chatbox from './components/Chatbox';
 
 const app = new Vue({
     el: '#app',
-    data: {
-        messages: [],
-        currentMessage: ''
-    },
-    methods: {
-        sendCurrentMessage: function () {
-            this.messages.push({
-                message: this.currentMessage,
-                receivedAt: moment().format()
-            });
-
-            axios.post('/chat', {
-                message: this.currentMessage
-            });
-            this.currentMessage = '';
-        }
-    },
-    mounted: function () {
-        Echo.channel('chat-channel').listen('ChatMessageReceived', (e) => {
-            console.log(e);
-            this.messages.push(e);
-        });
-    },
-    updated: function() {
-        let chat = this.$el.querySelector(".chat");
-        chat.scrollTop = chat.scrollHeight;
+    components: {
+        chatbox: Chatbox
     }
 });

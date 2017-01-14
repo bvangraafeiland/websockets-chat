@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $loggedInUserName = Auth::check() ? Auth::user()->name : 'Guest';
+        return view('home', compact('loggedInUserName'));
     }
 }

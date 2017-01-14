@@ -9,6 +9,7 @@ class ChatMessagesController extends Controller
 {
     public function store(Request $request)
     {
-        broadcast(new ChatMessageReceived($request->message))->toOthers();
+        $senderName = $request->user() ? $request->user()->name : 'Guest';
+        broadcast(new ChatMessageReceived($senderName, $request->message))->toOthers();
     }
 }
