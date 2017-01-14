@@ -1,8 +1,4 @@
-/**
- * Vue is a modern JavaScript library for building interactive web interfaces
- * using reactive data binding and reusable components. Vue's API is clean
- * and simple, leaving you to focus on building your next great project.
- */
+window.collection = require('lodash/collection');
 
 window.Vue = require('vue');
 
@@ -12,6 +8,8 @@ window.axios = axios;
 axios.defaults.headers.common = {
     'X-CSRF-TOKEN': Laravel.csrfToken
 };
+
+window.moment = require('moment');
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

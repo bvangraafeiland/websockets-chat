@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use Carbon\Carbon;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -17,6 +18,7 @@ class ChatMessageReceived implements ShouldBroadcast
      * @var
      */
     public $message;
+    public $receivedAt;
 
     /**
      * Create a new event instance.
@@ -25,8 +27,8 @@ class ChatMessageReceived implements ShouldBroadcast
      */
     public function __construct($message)
     {
-        //
         $this->message = $message;
+        $this->receivedAt = Carbon::now()->toW3cString();
     }
 
     /**

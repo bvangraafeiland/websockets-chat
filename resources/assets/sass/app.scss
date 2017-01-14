@@ -7,3 +7,12 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+html, body {
+  height: 100%;
+}
+
+.chat {
+  height: 500px;
+  overflow: auto;
+}
