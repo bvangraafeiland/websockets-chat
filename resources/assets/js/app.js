@@ -1,3 +1,4 @@
+"use strict";
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -16,5 +17,14 @@ require('./bootstrap');
 Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+        messages: []
+    },
+    mounted: function () {
+        Echo.channel('chat-channel').listen('ChatMessageReceived', (e) => {
+            console.log(e);
+            this.messages.push(e.message);
+        });
+    }
 });
