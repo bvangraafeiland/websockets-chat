@@ -23,8 +23,8 @@ class BroadcastServiceProvider extends ServiceProvider
             return (int) $user->id === (int) $userId;
         });
 
-        //Broadcast::channel('chat-channel', function ($user) {
-        //    return true;
-        //});
+        Broadcast::channel('chat-channel', function ($user) {
+            return ['name' => $user->name, 'id' => $user->id];
+        });
     }
 }
